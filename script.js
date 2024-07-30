@@ -150,7 +150,7 @@ window.addEventListener('scroll', function () {
     const parallax = document.querySelector('.parallax::before');
     const scrollPosition = window.pageYOffset;
     parallax.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-}); s
+});
 
 
 //footer
@@ -187,4 +187,17 @@ window.addEventListener('scroll', function () {
     });
 
     document.querySelector('.background-container').style.background = `rgb(${newColor[0]}, ${newColor[1]}, ${newColor[2]})`;
+});
+
+
+// Menu desplegable
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', function () {
+        nav.classList.toggle('open');
+    });
 });

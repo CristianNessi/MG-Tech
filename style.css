@@ -1,26 +1,3 @@
-:root {
-    /* COLORES */
-    --whiteColor: #ffffff;
-    --whiteColor-70: #ffffffb3;
-
-    --bluelightColor: rgba(0, 234, 255, 0.927);
-    --blueColor: rgba(0, 128, 255, 0.909);
-    --darkblueColor: rgba(98, 0, 255, 0.745);
-    --buttonSocialColor: #222222;
-    --buttonSocialColor__hover: rgba(54, 54, 54, 0.297);
-
-    /* TAMAÑO DE TEXTO */
-    --navLink__textSize: clamp(14px, 4vw, 22px);
-    --principalTitleSize: clamp(1.8rem, 6vw, 3rem);
-    --principalParagraphSize: clamp(1rem, 3vw, 1.3rem);
-
-    --SectionTitleSize: clamp(1.5rem, 6vw, 2.1rem);
-    --ExperienciaTitleSize: clamp(1rem, 5vw, 1.8rem);
-    --ExperienceParagraphSixe: clamp(0.9rem, 4vw, 1.3rem);
-    --Button: clamp(0.5rem, 3vw, 0.8rem);
-    --Responsive: clam(0.4rem, 4vw, 1rem);
-}
-
 body {
     background: rgba(62, 176, 238, 0.5);
     /* Fondo azul con un 50% de transparencia */
@@ -592,7 +569,7 @@ nav li a:hover {
 .colaboradores h2 {
     color: #ffffff;
     border-radius: 10px;
-    background-color: #0033b3;
+    background-color: #658beb;
     text-align: center;
     margin-bottom: 30px;
     font-size: 2em;
@@ -726,8 +703,8 @@ nav li a:hover {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #0033b3;
-    color: white;
+    background-color: #ff6600;
+    color: rgb(0, 0, 0);
     border-radius: 50%;
     width: 70px;
     height: 70px;
@@ -735,15 +712,16 @@ nav li a:hover {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, transform 0.3s ease;
     z-index: 1000;
 }
 
 .floating-button:hover {
-    background-color: #004494;
+    background-color: #012957;
     transform: scale(1.2);
+    color: rgb(255, 255, 255);
 }
 
 /* Estilos del contenedor del formulario */
@@ -978,8 +956,147 @@ nav li a:hover {
     transform: scale(1.8);
 }
 
+/* Estilos del menú hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
 
-/* Media Queries */
 @media (max-width: 768px) {
-    .title-flex {}
+    .barra {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav li {
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    nav li a {
+        width: 100%;
+        display: block;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .grid-container {
+        width: 100%;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .title-flex h2 {
+        font-size: 36px;
+    }
+
+    .title-container h3 {
+        font-size: 16px;
+    }
+
+    .banner {
+        flex-direction: column;
+    }
+
+    .popup-content {
+        width: 90%;
+        max-width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .section {
+        padding: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+    }
+
+    .timeline-item.right {
+        left: 0 !important;
+    }
+
+    .timeline::before {
+        left: 5%;
+    }
+
+    .timeline-item::after {
+        left: 50%;
+        margin-left: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .barra {
+        padding: 5px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .title-flex h2 {
+        font-size: 28px;
+    }
+
+    .title-container h3 {
+        font-size: 14px;
+    }
+
+    .icono svg {
+        width: 70px;
+        height: 70px;
+    }
+
+    .popup-content {
+        height: 70%;
+        padding: 5px;
+    }
+
+    .section h2 {
+        font-size: 1.5em;
+    }
+
+    .section h3 {
+        font-size: 1.2em;
+    }
+
+    .section p,
+    .section ol li {
+        font-size: 1em;
+    }
 }
