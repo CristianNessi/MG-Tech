@@ -1,3 +1,4 @@
+// Scrool
 window.addEventListener('scroll', function () {
     const section = document.getElementById('marketing-section');
     const sectionPosition = section.getBoundingClientRect().top;
@@ -9,6 +10,62 @@ window.addEventListener('scroll', function () {
         section.classList.remove('visible');
     }
 });
+
+// Añadido para evitar múltiples cálculos innecesarios al hacer scroll rápidamente.
+window.addEventListener('resize', () => {
+    const section = document.getElementById('marketing-section');
+    const sectionPosition = section.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+
+    if (sectionPosition < screenPosition) {
+        section.classList.add('visible');
+    } else {
+        section.classList.remove('visible');
+    }
+});
+
+
+// banner 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const icons = document.querySelectorAll('.icono');
+    const popups = document.querySelectorAll('.popup');
+    const closes = document.querySelectorAll('.close');
+    const volverButtons = document.querySelectorAll('.volver');
+
+    // Mostrar ventana emergente al hacer clic en el icono
+    icons.forEach(icon => {
+        icon.addEventListener('click', () => {
+            const popupId = icon.getAttribute('data-popup');
+            const popup = document.getElementById(popupId);
+            popup.style.display = 'block';
+        });
+    });
+
+    // Cerrar ventana emergente al hacer clic en el botón de cerrar
+    closes.forEach(close => {
+        close.addEventListener('click', (event) => {
+            event.target.closest('.popup').style.display = 'none';
+        });
+    });
+
+    // Cerrar ventana emergente al hacer clic en el botón "Volver"
+    volverButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.target.closest('.popup').style.display = 'none';
+        });
+    });
+
+    // Cerrar ventana emergente al hacer clic fuera del contenido
+    window.addEventListener('click', (event) => {
+        popups.forEach(popup => {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    });
+});
+
 
 // reloj
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,6 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+// colaboradores.
+
 document.addEventListener('DOMContentLoaded', () => {
     const articles = document.querySelectorAll('.colaboradores article');
     articles.forEach((article, index) => {
@@ -65,7 +125,7 @@ function toggleText(button) {
     }
 }
 
-// Boton
+// Boton de contacto.
 
 document.addEventListener('DOMContentLoaded', function () {
     const floatingButton = document.getElementById('floating-button');
@@ -84,6 +144,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// parallax
+
+window.addEventListener('scroll', function () {
+    const parallax = document.querySelector('.parallax::before');
+    const scrollPosition = window.pageYOffset;
+    parallax.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+}); s
 
 
 //footer
@@ -100,4 +167,24 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 150);
         });
     });
+});
+
+
+// degrade 
+
+window.addEventListener('scroll', function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollTop / docHeight;
+
+    const startColor = [62, 176, 238, 0.5]; // Color de inicio (rojo)
+    const endColor = [0, 0, 255]; // Color de fin (azul)
+
+    const newColor = startColor.map((start, index) => {
+        const end = endColor[index];
+        const diff = end - start;
+        return Math.round(start + (diff * scrollPercent));
+    });
+
+    document.querySelector('.background-container').style.background = `rgb(${newColor[0]}, ${newColor[1]}, ${newColor[2]})`;
 });
