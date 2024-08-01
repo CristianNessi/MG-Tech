@@ -192,12 +192,30 @@ window.addEventListener('scroll', function () {
 
 // Menu desplegable
 
-
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
+    const menu = document.querySelector('nav ul');
 
-    menuToggle.addEventListener('click', function () {
-        nav.classList.toggle('open');
-    });
+    function toggleMenu() {
+        if (menu) {
+            menu.classList.toggle('menu-show');
+        }
+    }
+
+    function handleScroll() {
+        const barra = document.querySelector('.barra');
+        if (barra) {
+            if (window.scrollY > 0) {
+                barra.classList.add('scroll');
+            } else {
+                barra.classList.remove('scroll');
+            }
+        }
+    }
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', toggleMenu);
+    }
+
+    window.addEventListener('scroll', handleScroll);
 });
