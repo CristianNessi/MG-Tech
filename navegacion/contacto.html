@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactanos</title>
+    <title>Contáctanos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="contacto.css">
+    <script src="contacto.js" defer></script>
 </head>
 
 <body>
@@ -12,18 +15,81 @@
         <div class="barra">
             <div class="grid-container">
                 <img src="../imagenes/MG_DG_5_no_bg_cv2.png" alt="Logo" class="logo">
-                <h1>Contactanos</h1>
-
+                <h1>Contáctanos</h1>
             </div>
             <nav>
                 <ul class="menu">
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="somos.html">¿Quiénes somos?</a></li>
-                    <li><a href="blog.html"> | Blog</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <section id="contacto">
+        <div class="content-container">
+            <div class="porque-contactarnos">
+                <h2>¿Por qué Contactarnos?</h2>
+                <p>En MG'Tech, entendemos que cada negocio es único y tiene sus propias necesidades y desafíos. Nos
+                    especializamos en crear estrategias de marketing digital personalizadas que te ayudarán a alcanzar
+                    tus
+                    objetivos de negocio. Al trabajar con nosotros, puedes esperar:</p>
+                <ul>
+                    <li><strong>Estrategias Personalizadas:</strong> No ofrecemos soluciones genéricas. Nuestro equipo
+                        analiza tu negocio y mercado para diseñar estrategias a medida.</li>
+                    <li><strong>Resultados Medibles:</strong> Nos enfocamos en métricas claras para que puedas ver el
+                        impacto de nuestras campañas en tu crecimiento.</li>
+                    <li><strong>Experiencia y Conocimiento:</strong> Contamos con un equipo de expertos en diversas
+                        áreas
+                        del marketing digital, listos para ayudarte a destacar.</li>
+                    <li><strong>Atención Personalizada:</strong> Valoramos la relación con nuestros clientes y nos
+                        comprometemos a ofrecer un servicio cercano y dedicado.</li>
+                </ul>
+            </div>
+            <div class="formulario-contacto">
+                <h2>Formulario de Contacto</h2>
+                <form id="contact-form">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form><br>
+                <div id="success-message" class="hidden">¡Gracias por contactarnos! Nos pondremos en contacto contigo
+                    pronto.</div>
+            </div>
+
+            <div class="redes-sociales">
+                <h2>Redes Sociales</h2>
+                <p>¡Síguenos en nuestras redes sociales para estar al día con las últimas novedades y consejos de
+                    marketing digital!</p>
+                <ul>
+                    <li><a href="https://www.facebook.com/profile.php?id=61560995336351" target="_blank"
+                            class="facebook-link"><i class="fab fa-facebook-f"></i> | MG / DG Marketing Digital </a>
+                    </li>
+                    <li><a href="https://www.instagram.com/digital0.7/" target="_blank" class="instagram-link"><i
+                                class="fab fa-instagram"></i> | Digital0.7 </a></li>
+                </ul>
+            </div>
+
+            <div class="informacion-contacto">
+                <h2>Información de Contacto</h2>
+                <p>Si prefieres, también puedes contactarnos directamente a través de los siguientes medios:</p>
+                <p><strong>Correo Electrónico:</strong> <a href="mgdg.digital@gmail.com">mgdg.digital@gmail.com</a>
+                </p>
+                <p><strong>Teléfono:</strong> +34 637 059 910</p>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

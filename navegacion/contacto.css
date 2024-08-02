@@ -1,0 +1,321 @@
+/* Estilos generales del cuerpo y encabezado */
+body {
+    background: rgba(62, 176, 238, 0.5);
+    background: url("../imagenes/fondo-contacto.png") no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* header */
+.header-container {
+    position: relative;
+    background: url("imagenes/community manager.png") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.barra {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.barra.scroll {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #fff;
+    margin: 0;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    padding: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #00aaff;
+    transform: scale(1.1);
+}
+
+.menu li:hover {
+    transform: translateX(10px);
+}
+
+/* Estilos para la sección de contacto */
+#contacto {
+    padding: 20px;
+    margin: 80px auto;
+    max-width: 800px;
+    background: #e7e6e6d6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contacto h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.porque-contactarnos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.porque-contactarnos ul li {
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 3px solid #00aaff;
+    transition: transform 0.3s ease, border-left-color 0.3s ease;
+}
+
+.porque-contactarnos ul li:hover {
+    border-left-color: #005f99;
+    transform: translateX(10px);
+}
+
+.formulario-contacto label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+    border-color: #007bff;
+}
+
+.formulario-contacto button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.formulario-contacto button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Estilos para redes sociales */
+.redes-sociales ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+}
+
+.redes-sociales li {
+    list-style: none;
+}
+
+.redes-sociales a {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 90px;
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos específicos para Facebook */
+.facebook-link {
+    background-color: #fff;
+}
+
+.facebook-link:hover {
+    color: white;
+    border-color: #090909;
+    background-color: #3b5998;
+    transform: scale(1.1);
+}
+
+/* Estilos específicos para Instagram */
+.instagram-link {
+    background-color: #fff;
+}
+
+.instagram-link:hover {
+    color: white;
+    border-color: #090909;
+    background-color: #FF3A37;
+    transform: scale(1.1);
+}
+
+.informacion-contacto p {
+    margin: 10px 0;
+}
+
+/* Mensaje de éxito */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu li {
+        padding: 10px 0;
+        transition: transform 0.3s ease, color 0.3s ease;
+        /* Asegúrate de que la transición esté definida aquí */
+        transform: scale(1.1);
+    }
+
+    .menu li a {
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .redes-sociales ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .redes-sociales a {
+        display: inline;
+        font-size: 20px;
+        padding: 8px;
+        transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    }
+
+    .redes-sociales a:active,
+    .redes-sociales a:hover {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 40px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+        padding: 8px;
+        transition: border-color 0.3s ease;
+        /* Asegúrate de definir transiciones aquí también */
+        transform: scale(1.1);
+    }
+
+    .formulario-contacto button {
+        padding: 8px 16px;
+        font-size: 14px;
+        transition: background 0.3s ease, transform 0.3s ease;
+        /* Asegúrate de definir transiciones aquí también */
+        transform: scale(1.1);
+    }
+
+    .redes-sociales a {
+        font-size: 18px;
+        padding: 6px;
+        transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    }
+
+}
