@@ -14,10 +14,7 @@ body {
 /* header */
 .header-container {
     position: relative;
-    background: url("imagenes/community manager.png") no-repeat center center;
-    background-size: cover;
     color: #fff;
-    height: 55vh;
     display: flex;
     flex-direction: column;
 }
@@ -64,6 +61,52 @@ nav {
     display: flex;
     align-items: center;
     position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    /* Oculto en pantallas grandes */
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1001;
+    /* Asegura que el botón esté por encima del menú */
+}
+
+nav ul {
+    list-style: none;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-around;
+    /* Espacio entre los elementos del menú */
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    position: relative;
+    padding: 0 15px;
+    /* Espaciado uniforme */
+}
+
+nav li a {
+    color: #fff;
+    /* Color del texto del enlace */
+    text-decoration: none;
+    font-weight: 500;
+    /* Peso de fuente intermedio para enlaces */
+    transition: color 0.3s ease, transform 0.3s ease;
+    /* Transiciones suaves */
+}
+
+nav li a:hover {
+    color: #00aaff;
+    /* Color del texto al pasar el ratón */
+    transform: scale(1.1);
+    /* Aumenta el tamaño del enlace al pasar el ratón */
 }
 
 .menu {
@@ -234,22 +277,49 @@ nav {
 
 /* Media Queries */
 @media (max-width: 768px) {
+
+    /* header */
     .grid-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .logo {
-        height: 50px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    nav {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 15px;
         align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Muestra el botón en pantallas pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0px;
+        /* Añadido padding para evitar que esté muy apretado */
+        position: fixed;
+        /* Fija el menú para que se despliegue sobre el contenido */
+        top: 60px;
+        /* Ajusta según el tamaño de tu botón y encabezado */
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        /* Oculta el menú por defecto */
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* Fondo del menú */
+        z-index: 1000;
+        /* Asegura que el menú esté por encima del contenido */
+        transition: max-height 0.3s ease;
+        /* Transición suave para la altura del menú */
+    }
+
+    nav ul.menu-show {
+        max-height: 500px;
+        /* Ajusta según el tamaño del menú */
+    }
+
+    nav li {
+        padding: 10px;
+        /* Añadido margen para separar más los elementos */
     }
 
     .menu {
@@ -293,7 +363,11 @@ nav {
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 24px;
+    }
+
+    nav ul {
+        font-size: 14px;
     }
 
     .formulario-contacto input,
