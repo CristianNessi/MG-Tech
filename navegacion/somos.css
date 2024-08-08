@@ -1,9 +1,6 @@
 /* Estilos generales del cuerpo */
 body {
     background: rgba(62, 176, 238, 0.5);
-    background: url('../imagenes/fondo-somos.avif') no-repeat center center;
-    background-size: cover;
-    background-position: center;
     font-family: Arial, sans-serif;
     margin: 0;
     line-height: 1.6;
@@ -15,7 +12,10 @@ body {
 /* header  */
 .header-container {
     position: relative;
+    background: url("../imagenes/community manager.png") no-repeat center center;
+    background-size: cover;
     color: #fff;
+    height: 55vh;
     display: flex;
     flex-direction: column;
 }
@@ -103,8 +103,15 @@ nav li a:hover {
 }
 
 /* Estilos para el main y las secciones */
+
+.container-main {
+    background: url('../imagenes/fondo-somos.avif') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+}
+
 main {
-    margin-top: 50px;
+    margin-top: -250px;
     padding: 20px;
     color: #000;
     z-index: 1;
@@ -279,7 +286,7 @@ p a:hover {
     }
 
     .about-us {
-        padding: 10px;
+        padding: 25px;
         max-width: 100%;
     }
 
@@ -325,7 +332,7 @@ p a:hover {
     }
 
     .about-us {
-        padding: 10px;
+        padding: 25px;
         max-width: 100%;
     }
 

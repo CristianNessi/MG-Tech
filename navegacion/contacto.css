@@ -144,7 +144,6 @@ nav li a:hover {
     margin: 80px auto;
     max-width: 800px;
     background: #e7e6e6d6;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #contacto h2 {
@@ -176,10 +175,10 @@ nav li a:hover {
 
 .formulario-contacto input,
 .formulario-contacto textarea {
-    width: 100%;
+    width: 95%;
     padding: 10px;
-    margin: 5px 0 20px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.582);
+    box-shadow: inset -3px -3px 13px rgb(90, 194, 238);
     border-radius: 5px;
     transition: border-color 0.3s ease;
 }
@@ -239,7 +238,7 @@ nav li a:hover {
 .facebook-link:hover {
     color: white;
     border-color: #090909;
-    background-color: #3b5998;
+    background-color: #3b5898aa;
     transform: scale(1.1);
 }
 
@@ -354,6 +353,14 @@ nav li a:hover {
     .redes-sociales a:active,
     .redes-sociales a:hover {
         transform: scale(1.1);
+    }
+
+    .facebook-link {
+        box-shadow: inset -16px -9px 13px #3b5998a7;
+    }
+
+    .instagram-link {
+        box-shadow: inset -16px -9px 13px #ff3a37a7;
     }
 }
 
