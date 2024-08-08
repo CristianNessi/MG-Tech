@@ -125,11 +125,36 @@ function toggleText(button) {
     }
 }
 
-// Boton de contacto.
+// Formulario.
+
+
+
+// // Boton de contacto.
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const floatingButton = document.getElementById('floating-button');
+//     const contactFormWrapper = document.getElementById('contact-form-wrapper');
+
+//     // Mostrar formulario al hacer clic en el botón flotante
+//     floatingButton.addEventListener('click', function () {
+//         contactFormWrapper.style.display = 'flex';
+//     });
+
+//     // Ocultar formulario al hacer clic fuera del formulario
+//     contactFormWrapper.addEventListener('click', function (e) {
+//         if (e.target === contactFormWrapper) {
+//             contactFormWrapper.style.display = 'none';
+//         }
+//     });
+// });
+
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const floatingButton = document.getElementById('floating-button');
     const contactFormWrapper = document.getElementById('contact-form-wrapper');
+    const form = document.getElementById('contactForm');
 
     // Mostrar formulario al hacer clic en el botón flotante
     floatingButton.addEventListener('click', function () {
@@ -143,14 +168,86 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+// function encriptarTexto(texto) {
+//     var passphrase = "mi_secreto_super_seguro"; // Usa una frase de contraseña segura
+//     return CryptoJS.AES.encrypt(texto, passphrase).toString();
+// }
 
-// parallax
+// document.addEventListener('DOMContentLoaded', function () {
+//     const floatingButton = document.getElementById('floating-button');
+//     const contactFormWrapper = document.getElementById('contact-form-wrapper');
+//     const form = document.getElementById('contactForm');
 
-window.addEventListener('scroll', function () {
-    const parallax = document.querySelector('.parallax::before');
-    const scrollPosition = window.pageYOffset;
-    parallax.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-});
+//     // Mostrar formulario al hacer clic en el botón flotante
+//     floatingButton.addEventListener('click', function () {
+//         contactFormWrapper.style.display = 'flex';
+//     });
+
+//     // Ocultar formulario al hacer clic fuera del formulario
+//     contactFormWrapper.addEventListener('click', function (e) {
+//         if (e.target === contactFormWrapper) {
+//             contactFormWrapper.style.display = 'none';
+//         }
+//     });
+
+//     // Encriptar los datos antes de enviar el formulario
+//     form.addEventListener('submit', function (e) {
+//         // Evitar el envío del formulario para encriptar los datos primero
+//         e.preventDefault();
+
+//         // Obtener los datos del formulario
+//         const nameField = document.getElementById('name');
+//         const emailField = document.getElementById('email');
+//         const subjectField = document.getElementById('subject');
+//         const messageField = document.getElementById('message');
+
+//         // Encriptar los datos
+//         nameField.value = encriptarTexto(nameField.value);
+//         emailField.value = encriptarTexto(emailField.value);
+//         subjectField.value = encriptarTexto(subjectField.value);
+//         messageField.value = encriptarTexto(messageField.value);
+
+//         // Puedes aquí enviar los datos al servidor usando Fetch o AJAX
+//         // Por ejemplo:
+//         // fetch('/your-endpoint', {
+//         //     method: 'POST',
+//         //     body: new FormData(form)
+//         // })
+//         // .then(response => response.json())
+//         // .then(data => console.log(data))
+//         // .catch(error => console.error('Error:', error));
+
+//         // Para fines de demostración, mostraremos los datos en la consola
+//         // console.log({
+//         //     name: nameField.value,
+//         //     email: emailField.value,
+//         //     subject: subjectField.value,
+//         //     message: messageField.value
+//         // });
+
+//         const formData = new FormData(form);
+
+//         // Enviar los datos al servidor
+//         fetch('/your-endpoint', {
+//             method: 'POST',
+//             body: formData
+//         })
+//             .then(response => response.json())
+//             .then(data => console.log(data))
+//             .catch(error => console.error('Error:', error));
+//         // Ocultar el formulario después de enviar
+//         contactFormWrapper.style.display = 'none';
+//     });
+// });
+
+
+// // parallax
+
+// window.addEventListener('scroll', function () {
+//     const parallax = document.querySelector('.parallax::before');
+//     const scrollPosition = window.pageYOffset;
+//     parallax.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+// });
 
 
 //footer
@@ -218,4 +315,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.addEventListener('scroll', handleScroll);
+});
+
+
+//section none
+
+window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+        section.style.transform = 'translateX(0)';
+    } else {
+        section.style.transform = 'none';
+        section.classList.add('visible');
+    }
 });
