@@ -301,6 +301,7 @@ nav li a:hover {
     list-style-type: disc;
     padding-left: 20px;
     text-align: left;
+    font-size: 18px;
 }
 
 .button-container,
@@ -1516,51 +1517,6 @@ nav li a:hover {
         font-size: 16px;
     }
 
-    /* llamador
-
-    .highlight-section {
-        transform: none;
-        padding: 10px 0px;
-        opacity: 1;
-    }
-
-    .visible {
-        transform: translateY(0px) scale(1.05);
-        width: 468px;
-    }
-
-    .highlight-content {
-        width: 90%;
-        padding: 20px 0px;
-    }
-
-    .price-container,
-    .text-container,
-    .button-container {
-        width: 70%;
-        margin: 10px 0px;
-        text-align: center;
-        align-items: center;
-    }
-
-    .price-container {
-        font-size: 42px;
-    }
-
-    .highlight-title {
-        font-size: 20px;
-    }
-
-    .highlight-description {
-        font-size: 14px;
-    }
-
-    .cta-button {
-        width: 60%;
-        padding: 10px 15px;
-        font-size: 14px;
-    }
-} */
 
     /* llamador  */
 
