@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MG' Tech</title>
+    <link rel="stylesheet" href="servicios.css">
+    <script src="servicios.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Seleccionar Método de Pago</h1>
+    </header>
+
+    <section>
+        <h2>Elige tu método de pago para el <span id="plan-seleccionado">Plan</span>:</h2>
+        <ul>
+            <li><a href="pago_tarjeta.html">Tarjeta de Crédito/Débito</a></li>
+            <li><a href="pago_paypal.html">PayPal</a></li>
+            <!-- Agrega otros métodos si es necesario -->
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Blog. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Obtener el plan seleccionado de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const plan = urlParams.get('plan');
+
+        // Mostrar el nombre del plan seleccionado en la página
+        const planSeleccionadoElement = document.getElementById('plan-seleccionado');
+        if (plan) {
+            planSeleccionadoElement.textContent = `Plan ${plan.charAt(0).toUpperCase() + plan.slice(1)}`;
+        }
+    </script>
+</body>
+
+</html>

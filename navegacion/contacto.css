@@ -292,6 +292,7 @@ nav li a:hover {
 
     nav ul {
         flex-direction: column;
+        margin-top: 17px;
         padding: 0px;
         /* Añadido padding para evitar que esté muy apretado */
         position: fixed;

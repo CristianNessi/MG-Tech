@@ -1,0 +1,429 @@
+/* Tipografía y colores básicos */
+body {
+    background: rgba(62, 176, 238, 0.5);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Encabezado */
+.header-container {
+    position: relative;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.barra {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.barra.scroll {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #fff;
+    margin: 0;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1001;
+}
+
+
+nav ul {
+    list-style: none;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    position: relative;
+    padding: 0 15px;
+}
+
+nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav li a:hover {
+    color: #00aaff;
+    transform: translateY(-5px);
+    /* Mueve el enlace hacia arriba 5px */
+}
+
+/* Sección Hero */
+.hero-section {
+    background: #007bff;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section h2 {
+    margin: 0 0 10px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 18px;
+    margin: 0;
+    max-width: 800px;
+}
+
+/* Sección de Planes */
+.plans {
+    background: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.plans h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #007bff;
+}
+
+.plans-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.plan-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 17px 19px 16px rgb(62, 176, 238, 0.5);
+    width: 300px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    padding: 20px;
+    text-align: center;
+}
+
+.plan-card:hover {
+    box-shadow: 0 8px 16px rgb(62, 176, 238);
+    transform: translateY(-5px);
+}
+
+.plan-header {
+    margin-bottom: 20px;
+}
+
+.plan-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.plan-body {
+    font-size: 16px;
+    color: #555;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.plan-footer {
+    margin-top: 20px;
+}
+
+.plan-footer .cta-button {
+    background: #28a745;
+    border-radius: 90px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    padding: 10px;
+    color: white;
+}
+
+.plan-footer .cta-button:hover {
+    color: #000000;
+    background: #65f587;
+    box-shadow: 0 8px 16px #1bff50;
+    transform: translateY(-5px);
+}
+
+
+/* Sección FAQ */
+.faq {
+    background: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 36px;
+    color: #007bff;
+}
+
+.faq-item {
+    background: #f1f1f1;
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: 600px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.3s;
+    border: 1px solid #ddd;
+}
+
+.faq-item:hover {
+    background: #e0e0e0;
+}
+
+.faq-question {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-answer {
+    padding: 15px;
+    font-size: 16px;
+    color: #555;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.whatsapp-button img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.whatsapp-button img:hover {
+    transform: scale(1.2);
+}
+
+/* Diseño Responsive */
+
+
+@media (max-width: 768px) {
+
+    /* header */
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Muestra el botón en pantallas pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 17px;
+        padding: 0px;
+        /* Añadido padding para evitar que esté muy apretado */
+        position: fixed;
+        /* Fija el menú para que se despliegue sobre el contenido */
+        top: 60px;
+        /* Ajusta según el tamaño de tu botón y encabezado */
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        /* Oculta el menú por defecto */
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* Fondo del menú */
+        z-index: 1000;
+        /* Asegura que el menú esté por encima del contenido */
+        transition: max-height 0.3s ease;
+        /* Transición suave para la altura del menú */
+    }
+
+    nav ul.menu-show {
+        max-height: 500px;
+        /* Ajusta según el tamaño del menú */
+    }
+
+    nav li {
+        padding: 10px;
+        /* Añadido margen para separar más los elementos */
+    }
+
+    .hero-section h1 {
+        font-size: 36px;
+    }
+
+    .hero-section p {
+        font-size: 18px;
+    }
+
+    .cta-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .plans-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-card {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* header */
+    .logo {
+        height: 40px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        font-size: 14px;
+    }
+
+    /* Sección Hero */
+    .hero-section {
+        padding: 100px 10px 60px 10px
+    }
+
+    .hero-section h2 {
+        font-size: 32px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+    }
+
+    /* Sección de Planes */
+    .plans {
+        padding: 40px 10px;
+    }
+
+    .plans h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .plan-card {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto 20px;
+    }
+
+    .plan-body {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+    .plan-footer .cta-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    /* Sección FAQ */
+    .faq {
+        padding: 30px 10px;
+    }
+
+    .faq h2 {
+        font-size: 28px;
+    }
+
+    .faq-item {
+        margin: 10px 0;
+    }
+
+    .faq-question {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .faq-answer {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Botón de WhatsApp */
+    .whatsapp-button img {
+        width: 50px;
+        height: 50px;
+    }
+}
