@@ -134,10 +134,21 @@ nav li a:hover {
 }
 
 .plans h2 {
-    font-size: 36px;
+    font-size: 45px;
+    border-radius: 90px;
     margin-bottom: 40px;
     color: #007bff;
+    display: inline-block;
+    padding: 10px 20px;
+    box-shadow: inset -11px -12px 6px 10px rgba(136, 245, 89, 0.434);
 }
+
+
+.plan-header h3 {
+    font-size: 30px;
+    color: #1100ff;
+}
+
 
 .plans-container {
     display: flex;
@@ -159,15 +170,11 @@ nav li a:hover {
 .plan-card:hover {
     box-shadow: 0 8px 16px rgb(62, 176, 238);
     transform: translateY(-5px);
+    background: #edededcf;
 }
 
 .plan-header {
     margin-bottom: 20px;
-}
-
-.plan-icon {
-    width: 80px;
-    height: 80px;
 }
 
 .plan-body {
@@ -199,6 +206,27 @@ nav li a:hover {
     background: #65f587;
     box-shadow: 0 8px 16px #1bff50;
     transform: translateY(-5px);
+}
+
+/* Personalización de la lista con ícono centrado */
+
+.plan-li {
+    list-style: none;
+    position: relative;
+    padding-right: 40px;
+    line-height: 25px;
+    font-size: 18px;
+}
+
+.plan-li::before {
+    content: "✔";
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #28a745;
+    font-size: 30px;
+    line-height: 1;
 }
 
 
@@ -339,6 +367,11 @@ nav li a:hover {
         width: 90%;
         max-width: 400px;
     }
+
+    .plan-li::before {
+        left: 30px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -396,6 +429,10 @@ nav li a:hover {
     .plan-footer .cta-button {
         font-size: 14px;
         padding: 8px 16px;
+    }
+
+    .plan-li::before {
+        left: 10px;
     }
 
     /* Sección FAQ */

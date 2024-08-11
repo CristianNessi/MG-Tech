@@ -1,0 +1,257 @@
+/* Estilos básicos para el contenido principal */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+main {
+    padding: 2rem 0;
+    margin-bottom: 6rem;
+    /* Espacio para los botones y el footer */
+}
+
+section {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.payment-options {
+    list-style: none;
+    padding: 0;
+}
+
+.payment-options li {
+    margin-bottom: 1rem;
+}
+
+.payment-options a {
+    display: block;
+    padding: 1rem;
+    background: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    white-space: nowrap;
+    /* Evita el desbordamiento del texto */
+}
+
+.payment-options a:hover {
+    background: #0056b3;
+}
+
+/* Estilos para los botones de navegación */
+.navigation-buttons {
+    position: fixed;
+    bottom: 6rem;
+    /* Ajusta esto para que se posicione encima del footer */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Centra los botones */
+    gap: 1rem;
+    /* Espacio entre los botones */
+    padding: 0 1rem;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.navigation-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centra el texto dentro del botón */
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    /* Evita el desbordamiento del texto */
+}
+
+.navigation-buttons a:hover {
+    background-color: #0056b3;
+}
+
+/* Botón para "Volver a Servicios" */
+.btn-left {
+    background-color: #17a2b8;
+}
+
+.btn-left:hover {
+    background-color: #138496;
+}
+
+/* Botón para "Volver a Inicio" */
+.btn-right {
+    background-color: #28a745;
+}
+
+.btn-right:hover {
+    background-color: #218838;
+}
+
+/* Estilos para el botón de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+.whatsapp-button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centra el texto dentro del botón */
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.whatsapp-button img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+}
+
+.whatsapp-button a:hover {
+    background-color: #128C7E;
+}
+
+/* Estilos para el footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 6rem;
+    /* Espacio para los botones de navegación */
+}
+
+/* Consultas de medios para pantallas menores de 768px */
+@media (max-width: 768px) {
+    .navigation-buttons {
+        bottom: 5rem;
+        /* Ajusta esto si es necesario */
+        padding: 0 0.5rem;
+        justify-content: space-between;
+        /* Espacia los botones */
+        gap: 0.5rem;
+    }
+
+    .navigation-buttons a {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    .payment-options a {
+        padding: 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .whatsapp-button a {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .whatsapp-button img {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+}
+
+/* Consultas de medios para pantallas menores de 480px */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    .container {
+        width: 95%;
+        padding: 0.5rem;
+    }
+
+    main {
+        padding: 1rem 0;
+        margin-bottom: 5rem;
+        /* Ajusta el espacio para los botones y el footer */
+    }
+
+    .navigation-buttons {
+        bottom: 4rem;
+        /* Ajuste adicional si es necesario */
+        flex-direction: row;
+        /* Mantiene los botones en la misma línea */
+        justify-content: space-between;
+        padding: 0;
+        gap: 0.5rem;
+        /* Espacio entre los botones */
+    }
+
+    .navigation-buttons a {
+        flex: 1;
+        /* Los botones ocupan espacio igual */
+        padding: 0.5rem;
+        font-size: 0.75rem;
+        text-align: center;
+        /* Centra el texto dentro del botón */
+    }
+
+    .payment-options a {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .whatsapp-button {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .whatsapp-button a {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+
+    .whatsapp-button img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
