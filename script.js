@@ -1,5 +1,46 @@
-// Scrool
-window.addEventListener('scroll', function () {
+
+
+function showPlan(plan) {
+    const card = document.getElementById('card');
+    const backCommunity = document.getElementById('back-community');
+    const backMarketing = document.getElementById('back-marketing');
+
+    // Ocultar todos los elementos `.back` antes de mostrar el correcto
+    backCommunity.style.display = 'none';
+    backMarketing.style.display = 'none';
+
+    // Mostrar el elemento `.back` correcto
+    if (plan === 'community') {
+        card.classList.add('show-community');
+        backCommunity.style.display = 'flex';
+    } else if (plan === 'marketing') {
+        card.classList.add('show-marketing');
+        backMarketing.style.display = 'flex';
+    }
+
+    // Ajustar la altura del contenedor basado en el elemento visible
+    const visibleBack = plan === 'community' ? backCommunity : backMarketing;
+    card.style.height = `${visibleBack.scrollHeight}px`;
+}
+
+function resetCard() {
+    const card = document.getElementById('card');
+    const backCommunity = document.getElementById('back-community');
+    const backMarketing = document.getElementById('back-marketing');
+
+    // Quitar las clases que muestran las tarjetas
+    card.classList.remove('show-community', 'show-marketing');
+
+    // Ocultar todos los elementos `.back`
+    backCommunity.style.display = 'none';
+    backMarketing.style.display = 'none';
+
+    // Restablecer la altura de la tarjeta
+    card.style.height = 'auto';
+}
+
+// Manejar visibilidad durante el scroll y resize
+function handleVisibility() {
     const section = document.getElementById('marketing-section');
     const sectionPosition = section.getBoundingClientRect().top;
     const screenPosition = window.innerHeight / 1.3;
@@ -9,62 +50,11 @@ window.addEventListener('scroll', function () {
     } else {
         section.classList.remove('visible');
     }
-});
+}
 
-// Añadido para evitar múltiples cálculos innecesarios al hacer scroll rápidamente.
-window.addEventListener('resize', () => {
-    const section = document.getElementById('marketing-section');
-    const sectionPosition = section.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
+window.addEventListener('scroll', handleVisibility);
+window.addEventListener('resize', handleVisibility);
 
-    if (sectionPosition < screenPosition) {
-        section.classList.add('visible');
-    } else {
-        section.classList.remove('visible');
-    }
-});
-
-
-// banner 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const icons = document.querySelectorAll('.icono');
-    const popups = document.querySelectorAll('.popup');
-    const closes = document.querySelectorAll('.close');
-    const volverButtons = document.querySelectorAll('.volver');
-
-    // Mostrar ventana emergente al hacer clic en el icono
-    icons.forEach(icon => {
-        icon.addEventListener('click', () => {
-            const popupId = icon.getAttribute('data-popup');
-            const popup = document.getElementById(popupId);
-            popup.style.display = 'block';
-        });
-    });
-
-    // Cerrar ventana emergente al hacer clic en el botón de cerrar
-    closes.forEach(close => {
-        close.addEventListener('click', (event) => {
-            event.target.closest('.popup').style.display = 'none';
-        });
-    });
-
-    // Cerrar ventana emergente al hacer clic en el botón "Volver"
-    volverButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            event.target.closest('.popup').style.display = 'none';
-        });
-    });
-
-    // Cerrar ventana emergente al hacer clic fuera del contenido
-    window.addEventListener('click', (event) => {
-        popups.forEach(popup => {
-            if (event.target === popup) {
-                popup.style.display = 'none';
-            }
-        });
-    });
-});
 
 
 // reloj

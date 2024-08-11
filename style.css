@@ -15,7 +15,7 @@ body {
     background: url("imagenes/community manager.png") no-repeat center center;
     background-size: cover;
     color: #fff;
-    height: 55vh;
+    height: 88, 5vh;
     display: flex;
     flex-direction: column;
     /* Alinea el contenido en columnas (logo y menú arriba, título abajo) */
@@ -170,135 +170,216 @@ nav li a:hover {
     /* Asegura que el contenido esté por delante del fondo */
 }
 
-/* Banner */
+/* llamador */
 
-.banner {
+.container-plan {
+    perspective: 1000px;
     display: flex;
-    justify-content: space-around;
-    padding: 25px;
-    margin: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    overflow: visible;
+    position: relative;
+    /* Asegura que este contenedor controla su contexto de posición */
 }
 
-
-.icono {
-    text-align: center;
-    transition: transform 0.5s ease;
+.card-plan {
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.8s, height 0.8s ease;
+    background-color: #767aec;
+    border-radius: 15px;
+    box-shadow: inset 20px 19px 18px rgb(7 54 226 / 65%);
+    min-height: 300px;
+    /* Modificado para que los elementos internos no queden sobrepuestos */
 }
 
-.icono svg {
-    width: 90px;
-    height: 90px;
-    aspect-ratio: 1;
-    display: block;
-    /* Asegura que el SVG sea un bloque */
-    margin: 0 auto;
-    /* Centra el SVG horizontalmente */
-}
-
-.icono p {
-    margin: 10px;
-    padding: 5px;
-    border-radius: 10px;
-    background: rgba(112, 128, 144, 0.679);
-    color: white;
-    /* Espacio entre el SVG y el texto */
-}
-
-.icono :hover {
-    transform: scale(1.1);
-    /* Aumenta el tamaño en un 150% */
-    color: #000000;
-}
-
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+.front,
+.back {
+    position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    /* Modificado para que ocupe todo el espacio del contenedor */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     text-align: center;
 }
 
-.popup-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    /* Ancho fijo */
-    height: 400px;
-    /* Alto fijo */
-    transform: translate(-50%, -50%);
-    background-size: cover;
-    /* Asegura que la imagen cubra toda el área */
-    background-position: center;
-    /* Centra la imagen */
-    background-repeat: no-repeat;
-    /* No repetir la imagen */
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    border-radius: 5px;
-    text-align: center;
-    color: black;
-    /* Color del texto */
-    overflow: hidden;
-    /* Evita que el contenido se salga del área */
-    background-attachment: fixed;
+.back {
+    transform: rotateY(180deg);
+    flex: 1 1 auto;
 }
 
-.popup-content p {
-    background-color: #bebdbdec;
-    /* Fondo semi-transparente para el texto */
-    padding: 15px;
-    border-radius: 5px;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-}
-
-.volver {
+.plan-button {
+    background-color: #77b3f3;
+    border: solid 5px black;
+    border-radius: 10px;
+    box-shadow: #0000ff 6px 4px 20px;
     margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.7);
+    padding: 100px 90px;
     color: white;
-    border-radius: 5px;
+    font-family: 'comic sans', sans-serif;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.volver:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+.plan-button:hover {
+    background-color: #0056b3;
+    color: #000;
+    box-shadow: #ffffff 6px 4px 20px;
 }
 
-/* entrada de tarjeta */
+.show-community,
+.show-marketing {
+    transform: rotateY(180deg);
+}
+
+.highlight-section {
+    width: 100%;
+    padding: 30px;
+    margin: 30px;
+    background: linear-gradient(280deg, #6b9aff, #504dff);
+    border: solid black 4px;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    z-index: 1;
+    /* Ajustado para evitar que se superponga con otros elementos */
+}
+
+.highlight-content {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: outset 0px 6px 7px 9px black;
+}
+
+.highlight-content:hover {
+    background: rgba(62, 176, 238, 0.822);
+    box-shadow: inset 0px 6px 7px 9px black;
+}
+
+.text-container {
+    text-align: center;
+    flex: 2;
+}
+
+.price-container,
+.text-container,
+.button-container {
+    flex: 1;
+    max-height: 100%;
+    border-radius: 10px;
+    border: solid 1px white;
+    padding: 20px;
+    text-align: center;
+    margin: 1px;
+}
 
 
+.highlight-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+.highlight-description {
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.highlight-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.button-container,
+.price-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.price-container:hover {
+    background: rgba(97, 198, 253, 0.802);
+    color: #000;
+    box-shadow: 0px 7px 18px black;
+}
+
+
+
+.text-container:hover {
+    background: rgba(97, 198, 253, 0.802);
+    color: #000;
+    box-shadow: 0px 7px 18px black;
+}
+
+
+.button-container:hover {
+    background: rgba(97, 198, 253, 0.802);
+    color: #000;
+    box-shadow: 0px 7px 18px black;
+}
+
+.price-container p {
+    font-size: 50px;
+    border: solid 4px black;
+    box-shadow: 0px 6px 9px white;
+    font-weight: bold;
+    color: #fff;
+}
+
+.price-container p:hover {
+    color: #000;
+}
+
+.cta-button,
+.backer-button {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: solid black 3px;
+    border-radius: 50px;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.cta-button:hover {
+    background-color: #f7f7f7;
+    transform: scale(1.05);
+}
+
+/* Entrada de tarjeta */
 .section {
     margin: 20px auto;
     padding: 40px;
     max-width: 800px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgb(0, 0, 0);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateX(100%);
     transition: opacity 1s ease, transform 0.7s ease;
     background-image: url('imagenes/MG  DG (2) (2).png');
     background-size: cover;
     background-position: center;
-    /* border: gainsboro 4px outset; */
 }
-
 
 .section.visible {
     opacity: 1;
@@ -1098,6 +1179,7 @@ nav li a:hover {
 
     nav ul {
         flex-direction: column;
+        margin-top: 17px;
         padding: 0px;
         /* Añadido padding para evitar que esté muy apretado */
         position: fixed;
@@ -1142,48 +1224,75 @@ nav li a:hover {
     }
 
 
-    /* Banner */
+    /* llamador */
 
-    .banner {
-        margin-top: 50px;
-        padding: 15px;
-        margin: 10px;
+    .highlight-section {
+        padding: 0px;
+        margin: 15px;
+    }
+
+
+    .highlight-title {
+        font-size: 28px;
+    }
+
+    .highlight-description {
+        font-size: 15px;
+    }
+
+    .highlight-list {
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-around;
     }
 
-    .icono {
-        flex: 1 1 45%;
-        /* Ajusta el tamaño de los iconos en pantallas medianas */
-        margin: 5px;
 
+    .highlight-content {
+        flex-direction: column;
     }
 
-    .icono svg {
-        width: 70px;
-        height: 70px;
+    .price-container,
+    .text-container,
+    .button-container {
+        flex: 1;
+        padding: 0px;
+        /* Reducir padding */
+        margin: 15px 25px;
+        /* Reducir margen */
     }
 
-    .icono p {
-        margin: 5px;
-        padding: 5px;
-    }
-
-
-    .popup-content {
-        max-width: 300px;
-        margin-top: 20px;
-    }
-
-    .close {
+    .plan-button {
+        padding: 50px 40px;
+        /* Reducir padding */
         font-size: 20px;
+        /* Reducir tamaño de fuente */
     }
 
-    .volver {
-        padding: 8px 16px;
-        font-size: 14px;
+    .price-container p {
+        display: inline-block;
+        /* Cambia a inline-block para que ocupe solo el ancho necesario */
+        font-size: 50px;
+        border: solid 4px black;
+        box-shadow: 0px 6px 9px white;
+        font-weight: bold;
+        color: #fff;
+        padding: 10px;
+        /* Agregar padding si es necesario */
+        margin: 0 auto;
+        /* Centra horizontalmente */
     }
+
+    .button-container {
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .cta-button,
+    .backer-button {
+        font-size: 15px;
+        padding: 3px;
+        margin: 5px;
+    }
+
 
     /* Tarjeta de entrada */
 
@@ -1224,9 +1333,6 @@ nav li a:hover {
     .section ol li {
         font-size: 16px;
     }
-
-
-
 
     /* timeline */
 
@@ -1383,8 +1489,8 @@ nav li a:hover {
     .social-links li {
         margin: 5px 0;
     }
-}
 
+}
 
 @media (max-width: 480px) {
 
@@ -1410,52 +1516,106 @@ nav li a:hover {
         font-size: 16px;
     }
 
-    /* Banner */
+    /* llamador
 
-    .banner {
-        flex-direction: column;
-        /* Dispone los iconos en una columna */
-        align-items: flex-start;
+    .highlight-section {
+        transform: none;
+        padding: 10px 0px;
+        opacity: 1;
+    }
+
+    .visible {
+        transform: translateY(0px) scale(1.05);
+        width: 468px;
+    }
+
+    .highlight-content {
+        width: 90%;
+        padding: 20px 0px;
+    }
+
+    .price-container,
+    .text-container,
+    .button-container {
+        width: 70%;
+        margin: 10px 0px;
         text-align: center;
-    }
-
-    .icono {
-        display: flex;
-        /* flex: 1 1 100%; */
-        /* Iconos ocupan todo el ancho */
-        margin: 5px 0;
-    }
-
-    .icono svg {
-        width: 60px;
-        height: 60px;
-    }
-
-    .popup {
-        width: 100%;
-        justify-content: space-around;
         align-items: center;
     }
 
-    .popup-content {
-        width: 100%;
-        max-width: 250px;
-        padding: 10px;
+    .price-container {
+        font-size: 42px;
     }
 
-    .close {
+    .highlight-title {
+        font-size: 20px;
+    }
+
+    .highlight-description {
+        font-size: 14px;
+    }
+
+    .cta-button {
+        width: 60%;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+} */
+
+    /* llamador  */
+
+    .highlight-section {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .highlight-title {
         font-size: 18px;
+        margin: 3px;
     }
 
-    .volver {
-        padding: 6px 12px;
-        font-size: 12px;
+    .highlight-description {
+        font-size: 15px;
+    }
+
+    .highlight-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .highlight-list {
+        font-size: 15px;
+        padding-left: 0;
+        list-style-type: none;
+        text-align: center;
+        justify-content: space-around;
+        margin: 0;
+        color: #000000;
+        background-color: #00aaff;
+    }
+
+
+
+    .price-container,
+    .text-container,
+    .button-container {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .plan-button {
+        padding: 40px 20px;
+        font-size: 20px;
+    }
+
+    .price-container p {
+        font-size: 25px;
     }
 
     /* Tarjeta de entrada */
 
     .section {
-        max-width: 100%;
+        align-items: center;
         padding: 15px;
     }
 
