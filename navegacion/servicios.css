@@ -432,7 +432,7 @@ nav li a:hover {
     }
 
     .plan-li::before {
-        left: 10px;
+        left: -25px;
     }
 
     /* Sección FAQ */
