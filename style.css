@@ -1,6 +1,6 @@
 /* Estilos generales del cuerpo y encabezado */
 body {
-    background: rgba(62, 176, 238, 0.5);
+    background: linear-gradient(to bottom right, #084182, #77f1ff);
     font-family: Arial, sans-serif;
     margin: 0;
     line-height: 1.6;
@@ -30,7 +30,7 @@ body {
     /* Fija la barra en la parte superior */
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 51, 102, 0.8);
     /* Fondo oscuro semi-transparente */
     padding: 10px 0;
     z-index: 1000;
@@ -42,7 +42,7 @@ body {
 }
 
 .barra.scroll {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgb(1 5 59 / 91%);
     /* Fondo sólido al hacer scroll */
     padding: 10px 0;
     /* Ajusta el padding cuando se hace scroll */
@@ -106,7 +106,7 @@ nav li {
 }
 
 nav li a {
-    color: #fff;
+    color: #ffffff;
     /* Color del texto del enlace */
     text-decoration: none;
     font-weight: 500;
@@ -190,9 +190,9 @@ nav li a:hover {
     transform-style: preserve-3d;
     transform: rotateY(0deg);
     transition: transform 0.8s, height 0.8s ease;
-    background-color: #767aec;
+    background-color: #9598e4;
     border-radius: 15px;
-    box-shadow: inset 20px 19px 18px rgb(7 54 226 / 65%);
+    box-shadow: inset 20px 19px 18px rgb(1 16 71 / 65%);
     min-height: 300px;
     /* Modificado para que los elementos internos no queden sobrepuestos */
 }
@@ -217,23 +217,22 @@ nav li a:hover {
 }
 
 .plan-button {
-    background-color: #77b3f3;
-    border: solid 5px black;
+    background-color: #0022fb;
+    border: solid 2px white;
     border-radius: 10px;
-    box-shadow: #0000ff 6px 4px 20px;
+    box-shadow: #ffffff 7px 9px 20px;
     margin-top: 20px;
     padding: 100px 90px;
-    color: white;
-    font-family: 'comic sans', sans-serif;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
     font-size: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .plan-button:hover {
-    background-color: #0056b3;
-    color: #000;
-    box-shadow: #ffffff 6px 4px 20px;
+    background-color: #ffe4b2;
+    box-shadow: 0 12px 20px rgba(255, 165, 0, 0.9);
 }
 
 .show-community,
@@ -245,7 +244,8 @@ nav li a:hover {
     width: 100%;
     padding: 30px;
     margin: 30px;
-    background: linear-gradient(280deg, #6b9aff, #504dff);
+    /* background: linear-gradient(280deg, #6b9aff, #504dff); */
+    background: linear-gradient(280deg, #6b9aff, #e07204);
     border: solid black 4px;
     color: #fff;
     text-align: center;
@@ -261,8 +261,10 @@ nav li a:hover {
 }
 
 .highlight-content:hover {
-    background: rgba(62, 176, 238, 0.822);
-    box-shadow: inset 0px 6px 7px 9px black;
+    /* background: rgba(62, 176, 238, 0.822); */
+    background: rgba(220, 144, 2, 0.827);
+    /* box-shadow: inset 0px 6px 7px 9px black; */
+    box-shadow: inset 0px 6px 7px 9px rgba(255, 68, 0, 0.603);
 }
 
 .text-container {
@@ -371,15 +373,30 @@ nav li a:hover {
     margin: 20px auto;
     padding: 40px;
     max-width: 800px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fondo blanco con un poco de transparencia */
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateX(100%);
     transition: opacity 1s ease, transform 0.7s ease;
-    background-image: url('imagenes/MG  DG (2) (2).png');
+    background-image: url('imagenes/logo.png');
     background-size: cover;
     background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Capa oscura semitransparente sobre la imagen */
+    z-index: 1;
 }
 
 .section.visible {
@@ -387,8 +404,19 @@ nav li a:hover {
     transform: translateX(0);
 }
 
+.section h2,
+.section h3,
+.section p,
+.section ol,
+.section strong,
+.section u {
+    position: relative;
+    z-index: 2;
+    /* Asegura que el texto esté sobre la capa oscura */
+}
+
 .section h2 {
-    font-size: 2em;
+    font-size: 2.2em;
     background: gray;
     border-radius: 10px;
     color: #ffffff;
@@ -398,7 +426,7 @@ nav li a:hover {
 }
 
 .section h3 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     border-radius: 10px;
     background: #bebdbdcf;
     color: #101010;
@@ -407,24 +435,46 @@ nav li a:hover {
 }
 
 .section p {
-    font-size: 1.2em;
-    color: #000000;
+    font-size: 1.5em;
+    color: #ffffff;
+    background-color: #808080;
     margin-bottom: 20px;
     text-align: justify;
 }
 
 .section ol {
-    padding-left: 20px;
-    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centra los elementos en el contenedor */
+    padding-left: 0;
+    /* Elimina el padding por defecto del <ol> */
+    list-style-type: none;
+    /* Elimina el estilo de la lista por defecto */
+    margin: 0;
 }
 
 .section ol li {
-    margin-bottom: 10px;
-    font-size: 18px;
+    margin: 10px;
+    font-size: 20px;
+    background-color: #67f0f5eb;
+    padding: 10px 20px;
+    /* Añade más padding lateral para un mejor centrado */
+    border-radius: 90px;
+    display: flex;
+    /* Cambia inline-flex a flex para permitir el wrap de los elementos */
+    justify-content: center;
+    /* Centra el contenido dentro de cada <li> */
+    align-items: center;
+    text-align: center;
+    flex-basis: calc(50% - 20px);
 }
 
+
+
 .section strong {
-    color: #333;
+    color: #000000;
+    font-size: 1.4em;
 }
 
 .section u {
@@ -432,8 +482,11 @@ nav li a:hover {
     text-align: center;
     margin-top: 20px;
     font-size: 1.2em;
-    color: #333;
+    color: #0011ff;
+    background-color: white;
+    word-spacing: 0.5em;
 }
+
 
 /* Linea de tiempo */
 
@@ -448,6 +501,7 @@ nav li a:hover {
     content: "";
     background-image: url('imagenes/parallax.jpg');
     /* Cambia esto a la ruta de tu imagen de fondo */
+    background-color: rgba(0, 51, 102, 0.5);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -500,7 +554,7 @@ nav li a:hover {
     width: 20px;
     height: 20px;
     right: -10px;
-    background-color: white;
+    background-color: #ff4500;
     border: 4px solid #ff6f00;
     top: 15px;
     border-radius: 50%;
@@ -508,6 +562,7 @@ nav li a:hover {
 }
 
 .timeline-item.right::after {
+    background-color: #ff6347;
     left: -10px;
 }
 
@@ -659,16 +714,20 @@ nav li a:hover {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
+    max-width: 1200px;
+    /* Limitar el ancho máximo del contenedor */
+    margin: 0 auto;
+    /* Centramos el contenedor */
 }
 
 .colaboradores h2 {
-    color: #ffffff;
+    background-color: #19fffc;
     border-radius: 10px;
-    background-color: #658beb;
     text-align: center;
     margin-bottom: 30px;
     font-size: 2em;
-    grid-column: span 4;
+    grid-column: 1 / -1;
+    /* Ocupar todo el ancho disponible */
     text-transform: uppercase;
 }
 
@@ -683,6 +742,8 @@ nav li a:hover {
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #e3e9f2;
+    max-width: 100%;
+    /* Asegurar que los artículos no se expandan más allá del contenedor */
 }
 
 .colaboradores article.show {
@@ -691,12 +752,11 @@ nav li a:hover {
 }
 
 .colaboradores article:hover {
-    background-color: #ddefffea;
-    /* Color gris medio celeste */
-    transform: scale(1.5);
-    /* Aumento de tamaño */
-    box-shadow: 0 12px 20px rgba(41, 41, 41, 0.901);
-    /* Sombra celeste */
+    background-color: #ffe4b2;
+    transform: scale(1.05);
+    /* Reducir el aumento de tamaño */
+    /* box-shadow: 0 12px 20px rgba(41, 41, 41, 0.901); */
+    box-shadow: 0 12px 20px rgba(255, 165, 0, 0.9);
 }
 
 .article-header {
@@ -731,7 +791,8 @@ nav li a:hover {
 }
 
 .colaboradores img:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
+    /* Reducir el escalado de las imágenes */
 }
 
 .colaboradores p {
@@ -772,8 +833,6 @@ nav li a:hover {
     transform: rotate(7deg);
 }
 
-
-
 /* Agregar animación de fade-in cuando los artículos se muestran */
 @keyframes fadeInUp {
     from {
@@ -791,117 +850,8 @@ nav li a:hover {
     animation: fadeInUp 0.9s ease both;
 }
 
-/* Formulario
 
- Estilos del botón flotante 
 
-.floating-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ff6600;
-    color: rgb(0, 0, 0);
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-}
-
-.floating-button:hover {
-    background-color: #012957;
-    transform: scale(1.2);
-    color: rgb(255, 255, 255);
-}
-
- Estilos del contenedor del formulario 
-
-.contact-form-wrapper {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-}
-
- Imagen de fondo 
-
-.contact-section {
-    background-image: url('imagenes/mail-marketing.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(255, 255, 255, 0.5);
-    background-blend-mode: overlay;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 480px;
-    width: 90%;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.contact-form {
-    margin: 0;
-}
-
-.contact-form h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    color: #0033b3;
-}
-
-.form-group {
-    margin-bottom: 10px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #0033b3;
-}
-
-.btn-submit {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #0033b3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-submit:hover {
-    background-color: #004494;
-} */
 
 /* Estilos del botón flotante */
 .floating-button {
@@ -1332,6 +1282,11 @@ nav li a:hover {
 
     .section ol li {
         font-size: 16px;
+        flex-basis: 100%;
+    }
+
+    .section strong {
+        font-size: 1em;
     }
 
     /* timeline */
@@ -1554,7 +1509,7 @@ nav li a:hover {
     }
 
     .plan-button {
-        padding: 40px 20px;
+        padding: 35px 10px;
         font-size: 20px;
     }
 
