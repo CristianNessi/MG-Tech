@@ -221,7 +221,7 @@ nav li a:hover {
 .plan-li::before {
     content: "✔";
     position: absolute;
-    left: -25px;
+    left: -40px;
     top: 50%;
     transform: translateY(-50%);
     color: #28a745;
@@ -369,7 +369,7 @@ nav li a:hover {
     }
 
     .plan-li::before {
-        left: 30px;
+        left: -30px;
     }
 
 }
@@ -432,7 +432,7 @@ nav li a:hover {
     }
 
     .plan-li::before {
-        left: -25px;
+        left: -30px;
     }
 
     /* Sección FAQ */
